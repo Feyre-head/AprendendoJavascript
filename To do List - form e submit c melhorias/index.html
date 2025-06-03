@@ -39,17 +39,32 @@
                 const liElement = document.createElement('li')
                 liElement.textContent = task
 
+                //Botão de excluir tarefa dentro de cada <li>
+                const deleteButton = document.createElement('button')
+                deleteButton.textContent = '❌'
+
+                //Colocar o botão dentro do Li
+                liElement.appendChild(deleteButton)
+
                 //Adicionar Item na lista
                 formList.appendChild(liElement)
                 console.log(formList)
 
                 //Limpar campo Input
                 formInput.value = ''
+
+                //Função deletar
+                deleteButton.addEventListener('click', function () {
+                    liElement.remove()
+                })
             }
+
+
         })
 
+
         //Melhorias opcionais
-        //Adicionar um botão de excluir tarefa dentro de cada <li>.
+        //Adicionar um botão de excluir tarefa dentro de cada <li>. OK
 
         // Criar uma função para marcar como concluída, alterando o estilo (ex.: riscar a tarefa).
 
