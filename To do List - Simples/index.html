@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>To-do List</h1>
+
+        <label for="newItem">New Item</label>
+        <input type="text" name="newItem" id="newItem">
+        <button class="addButton" type="submit">Add</button>
+
+        <ul class="list">
+        </ul>
+    </header>
+
+    <script>
+        //Seleciona o Item a ser adicionado
+        const inputTask = document.querySelector('#newItem')
+
+        //Seleciona o botão
+        const buttonTask = document.querySelector('.addButton')
+
+        //Seleciona onde será mostrado o novo item (lista)
+        const listTask = document.querySelector('.list')
+
+
+        //Botão ouvinte que ao clicar ele vai chamar a função
+        buttonTask.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            //Evita enviar tarefas com espaços em branco
+            let tarefa = inputTask.value.trim()
+            //Pega o index 0 e coloca em letra maiuscula             pega o resto da palavra e junta com o +
+            let tarefaFormatada = tarefa.charAt(0).toUpperCase() + tarefa.slice(1)
+            //R+esto 
+
+            //Verifica se o campo tarefa está vazio
+            if (tarefa === '') {
+                console.log('O campo está vazio')
+            } else {
+
+                //Criar uma lista no HTML
+                const createLi = document.createElement('li')
+
+                //Adicionar tarefa na lista
+                createLi.textContent = tarefaFormatada // Conteúdo de tarefa para o li
+                listTask.appendChild(createLi)
+
+                //Limpa o campo do Input
+                inputTask.value = ''
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
