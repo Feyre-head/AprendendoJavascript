@@ -29,7 +29,8 @@
             e.preventDefault() //Impede comportamento padrão do formulário
 
             //Pegar valor padrão do Input
-            const task = formInput.value.trim()
+            let task = formInput.value.trim()
+            let formttedTask = task.charAt(0).toUpperCase() + task.slice(1)
 
             //Verificar se o campo está vazio
             if (task === '') {
@@ -37,7 +38,7 @@
             } else {
                 //Criar elemento li
                 const liElement = document.createElement('li')
-                liElement.textContent = task
+                liElement.textContent = formttedTask
 
                 //Botão de excluir tarefa dentro de cada <li>
                 const deleteButton = document.createElement('button')
