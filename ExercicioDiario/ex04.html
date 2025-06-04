@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Ler 2 numeros inteiros e mostrar o somatório-->
+    <h2></h2>
+    <script>
+        let numero1 = prompt('Digite um valor:')
+        numero1 = parseInt(numero1) //Converte string em number
+
+        let numero2 = prompt('Digite outro valor:')
+        numero2 = parseInt(numero2)
+
+        const soma = numero1 + numero2
+        console.log('soma')
+
+        const mensagemHtml = document.querySelector('h2')
+        mensagemHtml.textContent = `${numero1} + ${numero2} = ${soma}`
+    </script>
+</body>
+
+</html>

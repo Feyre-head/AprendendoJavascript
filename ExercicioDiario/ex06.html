@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 05</title>
+</head>
+
+<body>
+
+    <!--
+Faça um programa que leia um número inteiro e mostre o seu antecessor e seu 
+sucessor. 
+Ex:  
+Digite um número: 9 
+O antecessor de 9 é 8 
+O sucessor de 9 é 10 -->
+
+    <h2></h2>
+    <script>
+        let lerNumero = prompt('Informe um número para saber seu antecessor e seu sucessor')
+        lerNumero = parseInt(lerNumero)
+
+        let sucessor = lerNumero + 1
+        let antecessor = lerNumero - 1
+        console.log(`Número informado: ${lerNumero} Sucessor: ${sucessor} Antecessor: ${antecessor}`)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Ler nome e salário e mostrar uma mensagem
+        Ex: Nome de Funcionário:
+            Salário:
+            O funcionario ${funcionario} tem um salario de R${salario}. -->
+    <h3></h3>
+
+    <script>
+        const nomeFuncionario = prompt('Informe o nome do Funcionario:')
+        const salarioFuncionario = prompt('Informe o Salário:')
+
+        const mensagem = document.querySelector('h3')
+        mensagem.innerHTML =
+            `O funcionario ${nomeFuncionario} tem um salário de R$${salarioFuncionario} no mes de Junho.
+                `
+    </script>
+</body>
+
+</html>
