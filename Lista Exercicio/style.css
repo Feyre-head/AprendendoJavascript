@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;  
+    justify-content: center; /*Centraliza o conteúdo da página na Horizontal*/
+    align-items: center;     /*Centraliza o conteúdo da página na Vertical*/
+    min-height: 100vh;  /*Altura minima 100 da view height*/
+    background: url('background.jpg') no-repeat; /*Define a imagem de fundo sem repetição*/
+    background-size: cover ;
+    background-position: center;
+}
+
+header{
+    position:fixed; /*Para o header ficar posicionado no topo*/  
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px; /*20px no topo e 100 na direita*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*Alinhar itens no meio*/
+    z-index: 99; /*Obriga o header ficar na frente de qualquer layout*/
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none; /*Não altera o
+ icone do mouse ao passar por cima*/
+}
+
+/* Edita os links dentro de a */
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none; /*Remove a decoração de link do a*/
+    font-weight: 500; /*Peso da fonte */
+    margin-left: 40px;
+}
+
+/*Cria barra branca ao dos itens de navegação mas nao mostra ela*/
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;  /*Define de qual lado a barra vai sair*/
+    transform: scaleX(0);
+    transition: transform .5s; /*Faz a animação da barra*/
+}
+
+/*Faz a barra aparecer ao passar o mouse nos Itens de Navegação*/
+.navigation a:hover:after{
+    transform-origin: left; /*Define qual lado a barra vai iniciar*/
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size:  1.1em;
+    color:#fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+/*Aparência do botão ao passar o mouse em cima*/
+.navigation .btnLogin:hover{
+    background: #fff;
+    color: #162938;
+}
