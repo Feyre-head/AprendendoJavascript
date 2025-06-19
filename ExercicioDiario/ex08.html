@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Desenvolva um programa que leia uma distância em metros e mostre os valores 
+    relativos em outras medidas. 
+    Ex:  
+        Digite uma distância em metros: 185.72 
+        A distância de 85.7m corresponde a: -->
+
+    <h2>Conversão metros para km / hm / dam / dm / cm /mm </h2>
+    <input id="inputMetros" type="number" placeholder="Digite a distância em Metros">
+    <button id="btn" type="submit">Calcular Distâncias</button>
+
+    <div class="resposta"></div>
+
+    <script>
+        let input = document.querySelector('#inputMetros')
+        const btnCalcular = document.querySelector('#btn')
+        const resultado = document.querySelector('.resposta')
+
+
+        btnCalcular.addEventListener('click', function (e) {
+            e.preventDefault()
+            const metros = Number(input.value)
+
+            if (isNaN(metros)) { //Se é metros é NaN
+                alert('Informe um número')
+
+            } else {
+                //Para km: km = m / 1000
+                const km = metros / 1000
+
+                // Para hm: hm = m / 100
+                const hm = metros / 100
+
+                // Para dam: dam = m / 10
+                const dam = metros / 10
+
+                // Para dm: dm = m * 10
+                const dm = metros *
+                    10
+                // Para cm: cm = m * 100
+                const cm = metros * 100
+
+                // Para mm: mm = m * 1000
+                const mm = metros * 1000
+
+                resultado.innerHTML = `${metros} para:<br>
+                km: ${km}<br>
+                hm: ${hm}<br>
+                dam: ${dam}<br>
+                dm: ${dm}<br>
+                cm: ${cm}<br>
+                mm: ${mm}<br>`
+            }
+
+
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
