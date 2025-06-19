@@ -1,18 +1,24 @@
-
-
 function outcome() {
+    let numOne = Number(document.getElementById('num-one').value)
+    let numTwo = Number(document.getElementById('num-two').value)
+    let total = ''
 
-    let num1 = Number(document.getElementById('num-one').value)
-    let num2 = Number(document.getElementById('num-two').value)
-    let total = 0
+    if (document.getElementById('box1').checked) {
+        total = numOne + numTwo
+    } else if (document.getElementById('box2').checked) {
+        total = numTwo - numTwo
+    } else if (document.getElementById('box3').checked) {
+        total = numOne * numTwo
+    } else {
+        total = numOne / numTwo
+    }
 
-    if (document.getElementById('box1').checked)
-        total = num1 + num2
-    else if (document.getElementById('box2').checked)
-        total = num1 - num2
-    else if (document.getElementById('box3').checked)
-        total = num1 * num2
-    else
-        total = num1 / num2
-    document.getElementById('resultArea').innerHTML = 'Result: ' + String(total)
+    document.getElementById('resultArea').innerHTML = `${total}`
+
+}
+
+function clearInput() {
+    document.getElementById('num-one').value = ''
+    document.getElementById('num-two').value = ''
+    document.getElementById('resultArea').textContent = ''
 }
